@@ -12,7 +12,6 @@ import RxSwift
 
 final class VideoChatViewController: UIViewController {
     @IBOutlet weak var interactorEventButton: UIButton!
-    @IBOutlet weak var cubeEventButton: UIButton!
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var mainCubeView: MainCubeView!
     
@@ -33,13 +32,5 @@ final class VideoChatViewController: UIViewController {
         }
         
         controller.incomingMessage(type: randomIncomingMessage)
-    }
-    
-    @IBAction func didPress(cubeButton: UIButton) {
-//        guard let random = ["A", "B", "C", "D", "E", "F"].randomElement() else {
-//            return
-//        }
-//
-//        cubeObservable.onNext(Character(random))
     }
 }

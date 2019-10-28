@@ -18,7 +18,7 @@ public protocol MainCubeViewDelegate: class {
 
 final public class MainCubeView: UIScrollView {
     weak var cubeDelegate: MainCubeViewDelegate?
-    var cubeObservable = BehaviorSubject<Character?>(value: nil)
+    var cubeObservable = BehaviorSubject<CubeMessageType?>(value: nil)
     
     override public var frame: CGRect {
         didSet {
@@ -37,7 +37,9 @@ final public class MainCubeView: UIScrollView {
     }
     
     private func setupUI() {
-        backgroundColor = .clear
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(emit))
+        addGestureRecognizer(gesture)
+//        backgroundColor = .clear
         showsHorizontalScrollIndicator = false
         showsVerticalScrollIndicator = false
         isPagingEnabled = true
@@ -48,5 +50,13 @@ final public class MainCubeView: UIScrollView {
     
     private func updateView() {
         // TODO: updating view
+    }
+    
+    @objc private func emit() {
+        guard let randomCubeEvent = CubeMessageType.allCases.randomElement() else {
+            return
+        }
+        
+        cubeObservable.onNext(randomCubeEvent)
     }
 }
