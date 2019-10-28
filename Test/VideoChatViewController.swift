@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  VideoChatViewController.swift
 //  Test
 //
 //  Created by Alex Golub on 25.10.2019.
@@ -10,7 +10,7 @@ import UIKit
 import RxCocoa
 import RxSwift
 
-final class ViewController: UIViewController {
+final class VideoChatViewController: UIViewController {
     @IBOutlet weak var interactorEventButton: UIButton!
     @IBOutlet weak var cubeEventButton: UIButton!
     @IBOutlet weak var resultLabel: UILabel!

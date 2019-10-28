@@ -12,7 +12,7 @@
 		E52AAA192367237A0085211D /* VideoChatStateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52AAA182367237A0085211D /* VideoChatStateController.swift */; };
 		E5C40A522362F0E1000F146D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C40A512362F0E1000F146D /* AppDelegate.swift */; };
 		E5C40A542362F0E1000F146D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C40A532362F0E1000F146D /* SceneDelegate.swift */; };
-		E5C40A562362F0E1000F146D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C40A552362F0E1000F146D /* ViewController.swift */; };
+		E5C40A562362F0E1000F146D /* VideoChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C40A552362F0E1000F146D /* VideoChatViewController.swift */; };
 		E5C40A592362F0E1000F146D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5C40A572362F0E1000F146D /* Main.storyboard */; };
 		E5C40A5B2362F0E3000F146D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5C40A5A2362F0E3000F146D /* Assets.xcassets */; };
 		E5C40A5E2362F0E3000F146D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5C40A5C2362F0E3000F146D /* LaunchScreen.storyboard */; };
@@ -52,7 +52,7 @@
 		E5C40A4E2362F0E1000F146D /* Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5C40A512362F0E1000F146D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5C40A532362F0E1000F146D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E5C40A552362F0E1000F146D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E5C40A552362F0E1000F146D /* VideoChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoChatViewController.swift; sourceTree = "<group>"; };
 		E5C40A582362F0E1000F146D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E5C40A5A2362F0E3000F146D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E5C40A5D2362F0E3000F146D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -143,7 +143,7 @@
 			children = (
 				E5C40A512362F0E1000F146D /* AppDelegate.swift */,
 				E5C40A532362F0E1000F146D /* SceneDelegate.swift */,
-				E5C40A552362F0E1000F146D /* ViewController.swift */,
+				E5C40A552362F0E1000F146D /* VideoChatViewController.swift */,
 				E52AAA182367237A0085211D /* VideoChatStateController.swift */,
 				E5C40A572362F0E1000F146D /* Main.storyboard */,
 				E5C40A5A2362F0E3000F146D /* Assets.xcassets */,
@@ -410,7 +410,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E5C40A562362F0E1000F146D /* ViewController.swift in Sources */,
+				E5C40A562362F0E1000F146D /* VideoChatViewController.swift in Sources */,
 				E52AAA192367237A0085211D /* VideoChatStateController.swift in Sources */,
 				E5C40A522362F0E1000F146D /* AppDelegate.swift in Sources */,
 				E5C40A542362F0E1000F146D /* SceneDelegate.swift in Sources */,
