@@ -15,11 +15,8 @@ final class ViewController: UIViewController {
     @IBOutlet weak var cubeEventButton: UIButton!
     @IBOutlet weak var resultLabel: UILabel!
     
-    private let interactorEvents = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-    private let cubeEvents: [Character] = ["A", "B", "C", "D", "E", "F"]
-    
-    private var interactorObservable = BehaviorSubject<Int?>.init(value: nil)
-    private var cubeObservable = BehaviorSubject<Character?>.init(value: nil)
+    private var interactorObservable = BehaviorSubject<Int?>(value: nil)
+    private var cubeObservable = BehaviorSubject<Character?>(value: nil)
     
     let disposeBag = DisposeBag()
     
@@ -31,7 +28,7 @@ final class ViewController: UIViewController {
     }
     
     @IBAction func didPress(interactorButton: UIButton) {
-        guard let random = interactorEvents.randomElement() else {
+        guard let random = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].randomElement() else {
             return
         }
         
@@ -39,11 +36,11 @@ final class ViewController: UIViewController {
     }
     
     @IBAction func didPress(cubeButton: UIButton) {
-        guard let random = cubeEvents.randomElement() else {
+        guard let random = ["A", "B", "C", "D", "E", "F"].randomElement() else {
             return
         }
         
-        cubeObservable.onNext(random)
+        cubeObservable.onNext(Character(random))
     }
     
     // MARK: - Combine Latest logic
