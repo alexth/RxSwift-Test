@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RxSwift
 
 protocol CombinedEvent {}
 
@@ -26,21 +27,34 @@ enum CubeMessageType: CaseIterable, CombinedEvent {
 }
 
 final class VideoChatStateController {
-    // TODO: WIP
-//    private weak var viewController: VideoChatViewController?
-//    private weak var mainCube: MainCubeView?
-//
-//    init(_ viewController: VideoChatViewController, mainCube: MainCubeView) {
-//        self.viewController = viewController
-//        self.mainCube = mainCube
+    private weak var viewController: VideoChatViewController?
+    private weak var mainCube: MainCubeView?
+    
+    private let disposeBag = DisposeBag()
+    
+    init(_ viewController: VideoChatViewController, mainCube: MainCubeView) {
+        self.viewController = viewController
+        self.mainCube = mainCube
 //        mainCube.cubeDelegate = self
-//    }
+    }
     
     func incomingMessage(type: IncomingCubeMessageType) {
         combineEvents(event: type)
     }
     
+    // MARK: - Combine Latest logic
+    
     func combineEvents<T: CombinedEvent>(event: T) {
+        guard let interactorObservable = viewController?.interactorObservable,
+            let cubeObservable = mainCube?.cubeObservable else {
+            return
+        }
         
+        let combineLatestObservable = Observable.combineLatest(interactorObservable, cubeObservable)
+            .bind { (int, character) in
+                self.viewController?.resultLabel.text = "\(int) - \(character)"
+        }
+        
+        combineLatestObservable.disposed(by: disposeBag)
     }
 }

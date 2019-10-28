@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxSwift
 
 public protocol MainCubeViewDelegate: class {
     func cubeViewDidScroll(_ cubeView: MainCubeView)
@@ -17,6 +18,7 @@ public protocol MainCubeViewDelegate: class {
 
 final public class MainCubeView: UIScrollView {
     weak var cubeDelegate: MainCubeViewDelegate?
+    var cubeObservable = BehaviorSubject<Character?>(value: nil)
     
     override public var frame: CGRect {
         didSet {
@@ -30,7 +32,8 @@ final public class MainCubeView: UIScrollView {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: coder)
+        setupUI()
     }
     
     private func setupUI() {

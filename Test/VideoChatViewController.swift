@@ -14,43 +14,32 @@ final class VideoChatViewController: UIViewController {
     @IBOutlet weak var interactorEventButton: UIButton!
     @IBOutlet weak var cubeEventButton: UIButton!
     @IBOutlet weak var resultLabel: UILabel!
+    @IBOutlet weak var mainCubeView: MainCubeView!
     
-    private var interactorObservable = BehaviorSubject<Int?>(value: nil)
-    private var cubeObservable = BehaviorSubject<Character?>(value: nil)
-    
-    private let disposeBag = DisposeBag()
-    
+    var interactorObservable = BehaviorSubject<IncomingCubeMessageType?>(value: nil)
+    private var controller: VideoChatStateController!
+        
     // MARK: - View lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupCombineLatest()
+
+        controller = VideoChatStateController(self, mainCube: mainCubeView)
     }
     
     @IBAction func didPress(interactorButton: UIButton) {
-        guard let random = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].randomElement() else {
+        guard let randomIncomingMessage = IncomingCubeMessageType.allCases.randomElement() else {
             return
         }
         
-        interactorObservable.onNext(random)
+        controller.incomingMessage(type: randomIncomingMessage)
     }
     
     @IBAction func didPress(cubeButton: UIButton) {
-        guard let random = ["A", "B", "C", "D", "E", "F"].randomElement() else {
-            return
-        }
-        
-        cubeObservable.onNext(Character(random))
-    }
-    
-    // MARK: - Combine Latest logic
-    
-    private func setupCombineLatest() {
-        let combineLatestObservable = Observable.combineLatest(interactorObservable, cubeObservable)
-            .bind { (int, character) in
-                self.resultLabel.text = "\(int) - \(character)"
-        }
-        
-        combineLatestObservable.disposed(by: disposeBag)
+//        guard let random = ["A", "B", "C", "D", "E", "F"].randomElement() else {
+//            return
+//        }
+//
+//        cubeObservable.onNext(Character(random))
     }
 }
