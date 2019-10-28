@@ -18,7 +18,7 @@ final class ViewController: UIViewController {
     private var interactorObservable = BehaviorSubject<Int?>(value: nil)
     private var cubeObservable = BehaviorSubject<Character?>(value: nil)
     
-    let disposeBag = DisposeBag()
+    private let disposeBag = DisposeBag()
     
     // MARK: - View lifecycle
     
@@ -46,11 +46,11 @@ final class ViewController: UIViewController {
     // MARK: - Combine Latest logic
     
     private func setupCombineLatest() {
-        let zip = Observable.combineLatest(interactorObservable, cubeObservable)
+        let combineLatestObservable = Observable.combineLatest(interactorObservable, cubeObservable)
             .bind { (int, character) in
                 self.resultLabel.text = "\(int) - \(character)"
         }
         
-        zip.disposed(by: disposeBag)
+        combineLatestObservable.disposed(by: disposeBag)
     }
 }

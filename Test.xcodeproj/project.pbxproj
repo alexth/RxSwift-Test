@@ -3,12 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		571BE4C3ADCC1293FC5395BE /* Pods_TestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DE27DC2B0BC2BB6DF75435B /* Pods_TestTests.framework */; };
 		D6D8EF6CABACCAC41AFA5978 /* Pods_Test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D17AB243B882337F563C535 /* Pods_Test.framework */; };
+		E52AAA192367237A0085211D /* VideoChatStateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52AAA182367237A0085211D /* VideoChatStateController.swift */; };
 		E5C40A522362F0E1000F146D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C40A512362F0E1000F146D /* AppDelegate.swift */; };
 		E5C40A542362F0E1000F146D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C40A532362F0E1000F146D /* SceneDelegate.swift */; };
 		E5C40A562362F0E1000F146D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C40A552362F0E1000F146D /* ViewController.swift */; };
@@ -47,6 +48,7 @@
 		B9DE346F15A56A05DD93B3CB /* Pods_Test_TestUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Test_TestUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1281C730AE8F842BA91D84E /* Pods-TestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestTests.release.xcconfig"; path = "Target Support Files/Pods-TestTests/Pods-TestTests.release.xcconfig"; sourceTree = "<group>"; };
 		DEA0F99DFAD48C7541D127A1 /* Pods-Test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test.release.xcconfig"; path = "Target Support Files/Pods-Test/Pods-Test.release.xcconfig"; sourceTree = "<group>"; };
+		E52AAA182367237A0085211D /* VideoChatStateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoChatStateController.swift; sourceTree = "<group>"; };
 		E5C40A4E2362F0E1000F146D /* Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5C40A512362F0E1000F146D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5C40A532362F0E1000F146D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,7 +113,6 @@
 				29F0EC101F2D330F045072CB /* Pods-TestTests.debug.xcconfig */,
 				D1281C730AE8F842BA91D84E /* Pods-TestTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -143,6 +144,7 @@
 				E5C40A512362F0E1000F146D /* AppDelegate.swift */,
 				E5C40A532362F0E1000F146D /* SceneDelegate.swift */,
 				E5C40A552362F0E1000F146D /* ViewController.swift */,
+				E52AAA182367237A0085211D /* VideoChatStateController.swift */,
 				E5C40A572362F0E1000F146D /* Main.storyboard */,
 				E5C40A5A2362F0E3000F146D /* Assets.xcassets */,
 				E5C40A5C2362F0E3000F146D /* LaunchScreen.storyboard */,
@@ -409,6 +411,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5C40A562362F0E1000F146D /* ViewController.swift in Sources */,
+				E52AAA192367237A0085211D /* VideoChatStateController.swift in Sources */,
 				E5C40A522362F0E1000F146D /* AppDelegate.swift in Sources */,
 				E5C40A542362F0E1000F146D /* SceneDelegate.swift in Sources */,
 			);
