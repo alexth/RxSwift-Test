@@ -27,8 +27,7 @@ final class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setupZip()
+        setupCombineLatest()
     }
     
     @IBAction func didPress(interactorButton: UIButton) {
@@ -47,10 +46,10 @@ final class ViewController: UIViewController {
         cubeObservable.onNext(random)
     }
     
-    // MARK: - View lifecycle
+    // MARK: - Combine Latest logic
     
-    private func setupZip() {
-        let zip = Observable.zip(interactorObservable, cubeObservable)
+    private func setupCombineLatest() {
+        let zip = Observable.combineLatest(interactorObservable, cubeObservable)
             .bind { (int, character) in
                 self.resultLabel.text = "\(int) - \(character)"
         }
