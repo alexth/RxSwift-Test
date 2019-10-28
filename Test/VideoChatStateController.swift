@@ -8,10 +8,9 @@
 
 import Foundation
 import RxSwift
+import RxCocoa
 
-protocol CombinedEvent {}
-
-enum IncomingCubeMessageType: CaseIterable, CombinedEvent {
+enum IncomingCubeMessageType: CaseIterable {
     case ban
     case beginDialog
     case WRDDataReceived
@@ -19,7 +18,7 @@ enum IncomingCubeMessageType: CaseIterable, CombinedEvent {
     case search
 }
 
-enum CubeMessageType: CaseIterable, CombinedEvent {
+enum CubeMessageType: CaseIterable {
     case didScroll
     case didEndDecelerating
     case willEndDragging
@@ -36,23 +35,20 @@ final class VideoChatStateController {
         self.viewController = viewController
         self.mainCube = mainCube
 //        mainCube.cubeDelegate = self
-    }
-    
-    func incomingMessage(type: IncomingCubeMessageType) {
-        combineEvents(event: type)
+        combineEvents()
     }
     
     // MARK: - Combine Latest logic
     
-    func combineEvents<T: CombinedEvent>(event: T) {
+    func combineEvents() {
         guard let interactorObservable = viewController?.interactorObservable,
             let cubeObservable = mainCube?.cubeObservable else {
             return
         }
         
         let combineLatestObservable = Observable.combineLatest(interactorObservable, cubeObservable)
-            .bind { (int, character) in
-                self.viewController?.resultLabel.text = "\(int) - \(character)"
+            .bind { (interactorEvent, cubeEvent) in
+                self.viewController?.resultLabel.text = "\(interactorEvent) \n-\n \(cubeEvent)"
         }
         
         combineLatestObservable.disposed(by: disposeBag)

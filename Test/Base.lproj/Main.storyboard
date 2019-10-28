@@ -15,25 +15,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bRH-ij-lrG">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bRH-ij-lrG">
                                 <rect key="frame" x="55" y="126" width="100" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="EHA-s0-5C4"/>
+                                    <constraint firstAttribute="width" constant="100" id="wsP-QQ-0SQ"/>
+                                </constraints>
                                 <state key="normal" title="Interactor"/>
                                 <connections>
                                     <action selector="didPressWithInteractorButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lag-nh-pNB"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FBb-tV-UdA">
-                                <rect key="frame" x="20" y="413" width="374" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FBb-tV-UdA">
+                                <rect key="frame" x="20" y="413" width="374" height="20.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="374" id="g1d-AE-H76"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mYV-rd-7lL" customClass="MainCubeView" customModule="Test" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mYV-rd-7lL" customClass="MainCubeView" customModule="Test" customModuleProvider="target">
                                 <rect key="frame" x="189" y="126" width="164" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cube" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="luH-vH-NSs">
                                         <rect key="frame" x="62" y="40" width="41" height="21"/>
@@ -44,9 +48,22 @@
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="164" id="0Eu-fc-IA7"/>
+                                    <constraint firstAttribute="height" constant="100" id="DNR-Sm-9sD"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="FBb-tV-UdA" firstAttribute="top" secondItem="bRH-ij-lrG" secondAttribute="bottom" constant="187" id="Dlj-3b-1tM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FBb-tV-UdA" secondAttribute="trailing" constant="20" id="MwV-f3-9ix"/>
+                            <constraint firstItem="bRH-ij-lrG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="82" id="Qnq-uK-oLr"/>
+                            <constraint firstItem="bRH-ij-lrG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="55" id="ZP2-be-laN"/>
+                            <constraint firstItem="mYV-rd-7lL" firstAttribute="leading" secondItem="bRH-ij-lrG" secondAttribute="trailing" constant="34" id="fgd-eS-gn9"/>
+                            <constraint firstItem="mYV-rd-7lL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="82" id="jke-y7-0qx"/>
+                            <constraint firstItem="FBb-tV-UdA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="teL-Tw-cl3"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>

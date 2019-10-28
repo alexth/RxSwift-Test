@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import RxCocoa
 import RxSwift
 
 final class VideoChatViewController: UIViewController {
@@ -31,6 +30,6 @@ final class VideoChatViewController: UIViewController {
             return
         }
         
-        controller.incomingMessage(type: randomIncomingMessage)
+        interactorObservable.onNext(randomIncomingMessage)
     }
 }
