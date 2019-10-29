@@ -40,7 +40,7 @@ final class VideoChatStateController {
     
     // MARK: - Combine Latest logic
     
-    func combineEvents() {
+    private func combineEvents() {
         guard let interactorObservable = viewController?.interactorObservable,
             let cubeObservable = mainCube?.cubeObservable else {
             return
@@ -53,4 +53,6 @@ final class VideoChatStateController {
         
         combineLatestObservable.disposed(by: disposeBag)
     }
+    
+    // MARK: - Events handling logic
 }

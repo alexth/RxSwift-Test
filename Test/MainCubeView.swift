@@ -37,7 +37,8 @@ final public class MainCubeView: UIScrollView {
     }
     
     private func setupUI() {
-        let gesture = UITapGestureRecognizer(target: self, action: #selector(emit))
+        // TODO: test trigger for event
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(emitEvent))
         addGestureRecognizer(gesture)
 //        backgroundColor = .clear
         showsHorizontalScrollIndicator = false
@@ -52,7 +53,7 @@ final public class MainCubeView: UIScrollView {
         // TODO: updating view
     }
     
-    @objc private func emit() {
+    @objc private func emitEvent() {
         guard let randomCubeEvent = CubeMessageType.allCases.randomElement() else {
             return
         }
